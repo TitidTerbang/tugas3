@@ -89,5 +89,34 @@ public class PengelolaanDataSiswa {
         System.out.println("Siswa dengan NIS " + nisHapus + " tidak ditemukan.");
 
     }
+
+    private static void ubahDataSiswa() {
+        System.out.print("Masukkan NIS siswa yang akan diubah: ");
+        String nisUbah = scanner.nextLine();
+
+        for (int i = 0; i < daftarSiswa.size(); i++) {
+            Siswa siswa = daftarSiswa.get(i);
+            if (siswa.getNis().equals(nisUbah)) {
+                System.out.print("Nama baru (tekan Enter untuk tidak mengubah): ");
+                String namaBaru = scanner.nextLine();
+                if (!namaBaru.isEmpty()) {
+                    siswa.setNama(namaBaru); //  Memanggil setter untuk nama
+                }
+
+
+                System.out.print("Kelas baru (tekan Enter untuk tidak mengubah): ");
+                String kelasBaru = scanner.nextLine();
+                if (!kelasBaru.isEmpty()) {
+                    siswa.setKelas(kelasBaru); // Memanggil setter untuk kelas
+                }
+
+                System.out.println("Data siswa berhasil diubah.");
+                return;
+            }
+        }
+
+        System.out.println("Siswa dengan NIS " + nisUbah + " tidak ditemukan.");
+    }
+
 }
 
