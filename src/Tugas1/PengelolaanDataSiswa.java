@@ -29,6 +29,9 @@ public class PengelolaanDataSiswa {
                 case 4:
                     System.out.println("Keluar dari program.");
                     break;
+                case 5:
+                    ubahDataSiswa();
+                    break;
                 default:
                     System.out.println("Pilihan tidak valid.");
             }
@@ -43,6 +46,7 @@ public class PengelolaanDataSiswa {
         System.out.println("2. Tampilkan Semua Siswa");
         System.out.println("3. Hapus Siswa");
         System.out.println("4. Keluar");
+        System.out.println("5 Ubah Data Siswa");
         System.out.print("Pilihan: ");
     }
 
