@@ -32,6 +32,9 @@ public class PengelolaanDataSiswa {
                 case 5:
                     ubahDataSiswa();
                     break;
+                case 6:
+                    lihatDetailSiswa();
+                    break;
                 default:
                     System.out.println("Pilihan tidak valid.");
             }
@@ -47,6 +50,7 @@ public class PengelolaanDataSiswa {
         System.out.println("3. Hapus Siswa");
         System.out.println("4. Keluar");
         System.out.println("5 Ubah Data Siswa");
+        System.out.println("6. Lihat Detail Siswa");
         System.out.print("Pilihan: ");
     }
 
@@ -120,6 +124,23 @@ public class PengelolaanDataSiswa {
         }
 
         System.out.println("Siswa dengan NIS " + nisUbah + " tidak ditemukan.");
+    }
+
+    private static void lihatDetailSiswa() {
+        System.out.print("Masukkan NIS siswa yang ingin dilihat detailnya: ");
+        String nisCari = scanner.nextLine();
+
+        for (Siswa siswa : daftarSiswa) {
+            if (siswa.getNis().equals(nisCari)) {
+                System.out.println("\nDetail Siswa:");
+                System.out.println("NIS: " + siswa.getNis());
+                System.out.println("Nama: " + siswa.getNama());
+                System.out.println("Kelas: " + siswa.getKelas());
+                return; // Keluar dari loop setelah data ditemukan
+            }
+        }
+
+        System.out.println("Siswa dengan NIS " + nisCari + " tidak ditemukan.");
     }
 
 }
