@@ -30,7 +30,7 @@ public class PengelolaanDataSiswa {
                     System.out.println("Keluar dari program.");
                     break;
                 default:
-                    System.out.println("Pilihan tidak valid.");
+                    System.out.println("Pilihan sangat tidak valid.");
             }
         } while (pilihan != 4);
 
